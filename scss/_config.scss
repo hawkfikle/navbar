@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$text-color: rgb(230, 227, 227);
+$background-color: rgb(83, 42, 122);
+ul{
+    list-style-type: none;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $background-color;
+        color: $text-color;
+        height: 8vh;
+        min-height: 50px;
+    
+        .navbar-list{
+            display: flex;
+            transition: all 0.5s cubic-bezier(.13,.67,.6,1.51);
+            width: 30%;
+            justify-content: space-between;
+
+            
+    
+            .navbar-links{
+                color: $text-color;
+            }
+        }
+        
+        .burger{
+            display:none;
+        }
+    }
+    
+}
+
+@media screen and (max-width:1000px){
+    body nav .navbar-list{
+        width: 35%;
+    }
+}
+@media screen and (max-width:750px){
+    body{
+        nav{
+            .navbar-list{
+                position: absolute;
+                top: 8vh;
+                width: 50%;
+                right: -50%;
+                height: 92vh;
+                background-color: $background-color;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                
+                li{
+
+                    opacity:0;
+                }
+
+                .navbar-links{
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+            }
+            .burger{
+                display:block;
+                display:flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 2rem;
+                height: 1.75rem;
+                
+
+                
+                div{
+                    background: white;
+                    width: 100%;
+                    height: 3px;
+                    transition: transform 0.5s ease;
+                }
+            }
+            .navbar-list.open{
+                right:0;
+            }
+            .burger.open{
+                transform: rotate(-45deg);
+            }
+            .burger.open .line1{
+                width: 50%;
+                transform-origin: right;
+                transform: rotate(270deg) translateX(7px);
+            }
+            .burger.open .line3{
+               
+                width: 50%;
+                transform-origin: right;
+                transform: rotate(-270deg) translateX(7px);
+            }
+            
+        }
+    }
+}
+
+@keyframes navbar-link-animation{
+    from{
+        opacity:0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
