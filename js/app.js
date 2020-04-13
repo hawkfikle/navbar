@@ -2,8 +2,8 @@
 
 const navslide = ()=>{
     const burger = document.querySelector('.burger');
-    const navlist = document.querySelector('.navbar-list');
-    const navlinks = document.querySelectorAll('.navbar-list li');
+    const navlist = document.querySelector('.Navbar-list');
+    const navlinks = document.querySelectorAll('.Navbar-list li');
     burger.addEventListener('click', ()=>{
         navlist.classList.toggle('open');
 
